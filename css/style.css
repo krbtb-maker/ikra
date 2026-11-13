@@ -1,0 +1,142 @@
+/* BlackBerry OS 5 uyumlu stil: yalnizca CSS 2.1
+   (degisken, flexbox, media query, gradient, fixed/sticky yok)
+   Gunduz modu = beyaz zemin / siyah yazi
+   Gece modu   = siyah zemin / beyaz yazi (body.dark) */
+
+body{margin:0;padding:0;background:#ffffff;color:#000000;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5}
+body.dark{background:#000000;color:#ffffff}
+
+.main{padding:6px 8px 24px 8px}
+
+h1{font-size:24px;line-height:1.2;margin:10px 0 10px 0;font-weight:bold}
+h2{font-size:20px;line-height:1.25;margin:22px 0 8px 0;padding:0 0 4px 0;border-bottom:2px solid #000000;font-weight:bold}
+h3{font-size:17px;margin:16px 0 4px 0;font-weight:bold;text-decoration:underline}
+body.dark h2{border-bottom:2px solid #ffffff}
+
+p{margin:6px 0 10px 0}
+ul,ol{margin:6px 0 10px 0;padding-left:26px}
+li{margin:3px 0}
+
+a{color:#000000;text-decoration:underline;font-weight:bold}
+a:hover{background:#000000;color:#ffffff}
+body.dark a{color:#ffffff}
+body.dark a:hover{background:#ffffff;color:#000000}
+
+/* ust cubuk: geri baglantisi + tema dugmesi */
+.top{margin:0 0 8px 0;padding:6px 0;border-bottom:1px solid #000000;font-size:15px}
+body.dark .top{border-bottom:1px solid #ffffff}
+.themebar{margin:0 0 10px 0}
+a.themebtn{display:block;text-align:center;padding:10px 8px;border:2px solid #000000;background:#ffffff;color:#000000;font-size:16px;font-weight:bold;text-decoration:none}
+a.themebtn:hover{background:#000000;color:#ffffff}
+body.dark a.themebtn{border:2px solid #ffffff;background:#000000;color:#ffffff}
+body.dark a.themebtn:hover{background:#ffffff;color:#000000}
+.lbl-day{display:none}
+body.dark .lbl-day{display:inline}
+body.dark .lbl-night{display:none}
+
+/* arama */
+.search-wrap{margin:12px 0 16px 0;padding:8px;border:2px solid #000000}
+body.dark .search-wrap{border:2px solid #ffffff}
+.search-wrap label{display:block;font-weight:bold;margin:0 0 4px 0}
+.search-wrap input{width:90%;font-size:16px;padding:4px}
+.search-meta{margin:6px 0 0 0;font-size:14px}
+.empty-state{display:none;margin:10px 0;padding:8px;border:1px dashed #000000}
+body.dark .empty-state{border:1px dashed #ffffff}
+.empty-state.visible{display:block}
+
+/* kutular */
+.formula{margin:10px 0;padding:8px 10px;border:1px solid #000000;border-left:6px solid #000000;font-weight:bold}
+body.dark .formula{border:1px solid #ffffff;border-left:6px solid #ffffff}
+.note{margin:10px 0;padding:8px 10px;border:2px dashed #000000;background:#eeeeee}
+body.dark .note{border:2px dashed #ffffff;background:#222222}
+
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid #000000;padding:5px 6px;text-align:left;vertical-align:top}
+th{background:#dddddd;font-weight:bold}
+body.dark th,body.dark td{border:1px solid #ffffff}
+body.dark th{background:#333333}
+
+/* sorular ve cozum gosterme */
+.q{margin:14px 0;padding:8px 10px;border:1px solid #000000}
+body.dark .q{border:1px solid #ffffff}
+.q p{margin:2px 0 8px 0}
+.ans{font-weight:bold;text-decoration:underline}
+.sol{margin:6px 0 0 0}
+a.solbtn{display:inline-block;padding:4px 8px;border:1px solid #000000;font-size:15px;text-decoration:none}
+body.dark a.solbtn{border:1px solid #ffffff}
+.solbody{margin:8px 0 0 0;padding:8px 0 0 0;border-top:1px dashed #000000}
+body.dark .solbody{border-top:1px dashed #ffffff}
+.solbtn .s2{display:none}
+/* JS varsa cozum gizli, yoksa hep acik kalir */
+body.js .solbody{display:none}
+body.js .open .solbody{display:block}
+body.js .open .solbtn .s1{display:none}
+body.js .open .solbtn .s2{display:inline}
+
+/* onceki / sonraki */
+.pager{margin:24px 0 0 0}
+.pager a{display:block;margin:8px 0;padding:10px 8px;border:2px solid #000000;text-decoration:none}
+body.dark .pager a{border:2px solid #ffffff}
+
+/* konu listesi */
+ul.toc{list-style:none;margin:6px 0;padding:0}
+ul.toc li{margin:8px 0;padding:8px 10px;border:1px solid #000000}
+body.dark ul.toc li{border:1px solid #ffffff}
+ul.toc li.hidden{display:none}
+ul.toc a{font-size:17px}
+ul.toc span{display:block;margin:2px 0 0 0;font-size:14px}
+
+.totop{margin:24px 0 0 0;text-align:center}
+
+/* SVG sekiller (OS 5 gostermez, yeni tarayicilarda tema rengini alir) */
+svg{color:#000000}
+body.dark svg{color:#ffffff}
+
+/* ---- sol menu (akordeon) ---- */
+table.layout{width:100%;border-collapse:collapse;table-layout:auto}
+table.layout td{vertical-align:top}
+td.side{width:38%;padding:6px 6px 6px 4px;border-right:2px solid #000000;font-size:14px}
+body.dark td.side{border-right:2px solid #ffffff}
+body.nomenu td.side{display:none}
+td.content{padding:0}
+.mhead{margin:0 0 8px 0;font-size:15px}
+.resume{margin:0 0 10px 0;padding:6px;border:2px solid #000000;font-size:13px}
+body.dark .resume{border:2px solid #ffffff}
+.mg{margin:0 0 4px 0;border:1px solid #000000}
+body.dark .mg{border:1px solid #ffffff}
+a.mgt{display:block;padding:7px 6px;text-decoration:none;font-size:14px;background:#dddddd}
+body.dark a.mgt{background:#333333}
+.m-minus{display:none}
+.mg.open .m-plus{display:none}
+.mg.open .m-minus{display:inline}
+.mg.open a.mgt{background:#000000;color:#ffffff}
+body.dark .mg.open a.mgt{background:#ffffff;color:#000000}
+.mlist{display:none;list-style:none;margin:0;padding:0}
+.mg.open .mlist{display:block}
+.mlist li{margin:0;padding:5px 6px;border-top:1px solid #999999;font-size:13px}
+.mlist li a{font-weight:normal}
+.mlist li.mlabel{font-weight:bold;background:#eeeeee;text-transform:uppercase;font-size:12px}
+body.dark .mlist li.mlabel{background:#222222}
+.mlist li.cur{border-left:6px solid #000000;font-weight:bold;background:#eeeeee}
+body.dark .mlist li.cur{border-left:6px solid #ffffff;background:#222222}
+.mlist li.cur a{font-weight:bold}
+
+table.bar{width:100%;border-collapse:separate;border-spacing:0}
+table.bar td{padding:0 3px 0 0}
+.lbl-mshow{display:none}
+body.nomenu .lbl-mshow{display:inline}
+body.nomenu .lbl-mhide{display:none}
+#resume-box .resume{font-size:15px}
+
+/* ust seviye basliklar (Mufredat / Kisisel Okumalar) */
+.mtop{margin:0 0 8px 0;border:2px solid #000000}
+body.dark .mtop{border:2px solid #ffffff}
+a.mtt{display:block;padding:9px 6px;text-decoration:none;font-size:15px;background:#000000;color:#ffffff}
+body.dark a.mtt{background:#ffffff;color:#000000}
+.t-minus{display:none}
+.mtop.open .t-plus{display:none}
+.mtop.open .t-minus{display:inline}
+.mtbody{display:none;padding:4px}
+.mtop.open .mtbody{display:block}
+.part{margin:22px 0 4px 0;padding:8px 10px;background:#000000;color:#ffffff;font-size:20px;font-weight:bold}
+body.dark .part{background:#ffffff;color:#000000}
