@@ -79,8 +79,23 @@ function tg(el) {
   return false;
 }
 
+/* ---- sabit (sticky) menu: yalnizca tarayici destegini kendisi dogrularsa ---- */
+function stickyOk() {
+  var d, v = ['sticky', '-webkit-sticky'], i;
+  try {
+    d = document.createElement('div');
+    for (i = 0; i < v.length; i++) {
+      d.style.position = '';
+      d.style.position = v[i];
+      if (d.style.position && d.style.position.indexOf('sticky') > -1) { return true; }
+    }
+  } catch (e) {}
+  return false;
+}
+
 /* ---- sayfa acilisinda ---- */
 addClass(document.body, 'js');
+if (stickyOk()) { addClass(document.body, 'stick'); }
 applyTheme(sget('tema') === 'dark' ? 'dark' : 'light');
 (function () {
   var pref = sget('menu'), w = 0;
